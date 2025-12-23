@@ -2,16 +2,24 @@ package com.curdop.curd.operation.entites;
 
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Student {
-    int studentId;
-    String studentFirstname;
-    String studentLastname;
-    String address;
-    String phoneNumber;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long studentId;
+    private String studentFirstname;
+    private String studentLastname;
+    private String address;
+    private String phoneNumber;
+
 }
